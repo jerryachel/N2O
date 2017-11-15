@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="" />
+    <meta name="keywords" content="安图欧、团建顾问" />
+    <title>安图欧团建顾问</title>
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <noscript>您的浏览器不支持JavaScript，请启动JavaScript或更换浏览器</noscript>
+</head>
+<body>
+    <header class="header header_white">
+        <nav class="nav">
+            <a href="index.html">
+                <img src="images/logo_black.jpg" class="nav__logo" alt="">
+            </a>
+            <div class="nav__menu">
+                <ul>
+                    <li class="menu__item ">
+                        <a href="index.html">首页</a>
+                        <span class="menu__underline"></span>
+                    </li>
+                    <li class="menu__item">
+                        <a href="years.html">年度系列</a>
+                        <span class="menu__underline"></span>
+                    </li>
+                    <li class="menu__item">
+                        <a href="think.html">N20-X的思考</a>
+                        <span class="menu__underline"></span>
+                    </li> 
+                    <li class="menu__item menu__item_actived">
+                        <a href="cases.html">精彩案例</a>
+                        <span class="menu__underline"></span>
+                    </li>
+                    <li class="menu__item">
+                        <a href="courses.html">特色课程</a>
+                        <span class="menu__underline"></span>
+                    </li>
+                    <li class="menu__item">
+                        <a href="contact.html">联系我们</a>
+                        <span class="menu__underline"></span>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="main cases_main" id="main">
+        <script id="main_content" type="text/html">
+            <div class="cases__container">
+                <section class="pc-banner">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            {{each contents item i }}
+                            {{if i == 0}}
+                            <div class="swiper-slide swiper-slide-center none-effect">
+                            {{else if i != 0}}
+                            <div class="swiper-slide">
+                            {{/if}}
+                                <div class="swiper__title">
+                                    <p>{{item.firstTitle}}</p>
+                                    <h2>{{item.secondTitle}}</h2>
+                                </div>
+                                <div class="swiper__img" style="background: url('{{item.resourceUrl}}')no-repeat center center;background-size: cover">
+                                    <a href="cases_detail.html?{{item.id}}" class="swiper__link">了解更多>></a>
+                                </div>
+                                <div class="mask__white"></div>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </section>
+            </div>
+        </script>
+    </div>
+    <footer id="footer_info" class="footer">
+        <script id="companyInfo" type="text/html">  
+            <ul class="footer__container">
+                <li class="footer__items"><a href="years.html">年度系列</a></li>
+                <li class="footer__items"><a href="cases.html">精彩案例</a></li>
+                <li class="footer__items"><a href="javascript:void(0)">官方微信</a></li>
+                <li class="footer__items"><a href="javascript:void(0)">官方微博</a></li>
+                <li class="footer__items"><a href="#">联系热线</a></li>
+                <li class="footer__items"><a href="think.html">N20-X的思考</a></li>
+                <li class="footer__items"><a href="courses.html">特色课程</a></li>
+                <li class="footer__items"><img src="images/qrcode.jpg" alt=""></li>
+                <li class="footer__items"><a href="https://{{weibo}}"><img src="images/weibo.jpg" alt=""></a></li>
+                <li class="footer__items">{{telePhone}}</li>
+                <p class="copyright">Copyright @ 2017 N2O-X版权所有</p>
+            </ul>
+        </script>
+    </footer>
+    <script src="js/wow.min.js"></script>
+    <script src="js/artTemplate.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        $.get('http://back.n2o.gzbige.com/n2oPublic/query.do?menuId=3',function(res){
+            console.log(res)
+            //render
+            var data = res.model
+            var html = template('main_content',data);  
+            document.getElementById("main").innerHTML = html; 
+            setTimeout(function(){
+                /*var swiper = new Swiper('.swiper-container', {
+                    autoplay:2000,
+                    pagination: '.swiper-pagination',
+                    slidesPerView: 5,
+                    loop:true,
+                    centeredSlides: true,
+                    paginationClickable: true,
+                    spaceBetween: -100,
+                    prevButton:'.swiper-button-prev',
+                    nextButton:'.swiper-button-next',
+                    slideToClickedSlide:true,
+                    effect:"coverflow",
+                    loopAdditionalSlides:1
+                });*/
+            },3000)
+            
+                
+        })
+        if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+            new WOW().init();
+        };  
+    </script>
+</body>
+</html>

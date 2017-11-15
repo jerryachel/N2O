@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="" />
+    <meta name="keywords" content="安图欧、团建顾问" />
+    <title>安图欧团建顾问</title>
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <noscript>您的浏览器不支持JavaScript，请启动JavaScript或更换浏览器</noscript>
+</head>
+<body>
+    <header class="header header_white">
+        <nav class="nav">
+            <a href="index.html">
+                <img src="images/logo_black.jpg" class="nav__logo" alt="">
+            </a>
+            <div class="nav__menu">
+                <ul>
+                    <li class="menu__item ">
+                        <a href="index.html">首页</a>
+                        <span class="menu__underline"></span>
+                    </li>
+                    <li class="menu__item">
+                        <a href="years.html">年度系列</a>
+                        <span class="menu__underline"></span>
+                    </li>
+                    <li class="menu__item">
+                        <a href="think.html">N20-X的思考</a>
+                        <span class="menu__underline"></span>
+                    </li> 
+                    <li class="menu__item menu__item_actived">
+                        <a href="cases.html">精彩案例</a>
+                        <span class="menu__underline"></span>
+                    </li>
+                    <li class="menu__item">
+                        <a href="courses.html">特色课程</a>
+                        <span class="menu__underline"></span>
+                    </li>
+                    <li class="menu__item">
+                        <a href="contact.html">联系我们</a>
+                        <span class="menu__underline"></span>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="main" id="main">
+        <script id="main_content" type="text/html">  
+            <div class="cases__banner">
+                <div class="cases__banner_l wow slideInLeft" data-wow-duration="1s">
+                    <p>{{model.firstTitle}}</p>
+                    <h2>{{model.secondTile}}</h2>
+                </div>
+                <div class="cases__banner_r  wow slideInRight" data-wow-duration="1.2s" style="background:url('images/cases_detail1.jpg')no-repeat;background-size: cover;"></div>
+            </div>
+            <div class="cases__passage">
+                <div class="passage__content">
+                    <p class="passage__content_l"><br><br>没有带不好员工，只有没有方法的领导。企业的管理层就是企业的大脑，高效迅捷的大脑运转，才能带动五脏六腑、四肢七窍正常工作，才会帮助企业做对的事，把对的事做好。<br><br>N2O-X将依据“管理金字塔模型”，针对性分析企业管理问题，从“计划、组织、控制、领导”四个维度进行对应的项目课程的设计，助力企业经营管理者，狭路相逢，勇于亮剑，决胜商场。</p>
+                    <img class="passage__content_r wow flip-in-ver-left" data-wow-duration="1.2s" src="images/cases_detail2.jpg" alt="">
+                </div>
+                <img  class="wow slideInUp" data-wow-duration="1.2s" src="images/cases_detail3.jpg" alt="">
+            </div>
+        </script>
+    </div>
+    <footer id="footer_info" class="footer">
+        <script id="companyInfo" type="text/html">  
+            <ul class="footer__container">
+                <li class="footer__items"><a href="years.html">年度系列</a></li>
+                <li class="footer__items"><a href="cases.html">精彩案例</a></li>
+                <li class="footer__items"><a href="javascript:void(0)">官方微信</a></li>
+                <li class="footer__items"><a href="javascript:void(0)">官方微博</a></li>
+                <li class="footer__items"><a href="#">联系热线</a></li>
+                <li class="footer__items"><a href="think.html">N20-X的思考</a></li>
+                <li class="footer__items"><a href="courses.html">特色课程</a></li>
+                <li class="footer__items"><img src="images/qrcode.jpg" alt=""></li>
+                <li class="footer__items"><a href="https://{{weibo}}"><img src="images/weibo.jpg" alt=""></a></li>
+                <li class="footer__items">{{telePhone}}</li>
+                <p class="copyright">Copyright @ 2017 N2O-X版权所有</p>
+            </ul>
+        </script>
+    </footer>
+    <script src="js/wow.min.js"></script>
+    <script src="js/artTemplate.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+
+        var detailId = window.location.search.substring(1)
+        $.get('http://back.n2o.gzbige.com/n2oPublic/queryCase.do?id='+detailId,function(res){
+            console.log(res)
+            //render
+            var data = res
+            var html = template('main_content',data);  
+            document.getElementById("main").innerHTML = html; 
+        })
+        if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+            new WOW().init();
+        };  
+    </script>
+</body>
+</html>
