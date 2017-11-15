@@ -53,17 +53,17 @@
         <script id="main_content" type="text/html">  
             <div class="cases__banner">
                 <div class="cases__banner_l wow slideInLeft" data-wow-duration="1s">
-                    <p>{{model.firstTitle}}</p>
-                    <h2>{{model.secondTile}}</h2>
+                    <p>{{firstTitle}}</p>
+                    <h2>{{secondTile}}</h2>
                 </div>
-                <div class="cases__banner_r  wow slideInRight" data-wow-duration="1.2s" style="background:url('images/cases_detail1.jpg')no-repeat;background-size: cover;"></div>
+                <div class="cases__banner_r  wow slideInRight" data-wow-duration="1.2s" style="background:url('{{picture1Image}}')no-repeat;background-size: cover;"></div>
             </div>
             <div class="cases__passage">
                 <div class="passage__content">
-                    <p class="passage__content_l"><br><br>没有带不好员工，只有没有方法的领导。企业的管理层就是企业的大脑，高效迅捷的大脑运转，才能带动五脏六腑、四肢七窍正常工作，才会帮助企业做对的事，把对的事做好。<br><br>N2O-X将依据“管理金字塔模型”，针对性分析企业管理问题，从“计划、组织、控制、领导”四个维度进行对应的项目课程的设计，助力企业经营管理者，狭路相逢，勇于亮剑，决胜商场。</p>
-                    <img class="passage__content_r wow flip-in-ver-left" data-wow-duration="1.2s" src="images/cases_detail2.jpg" alt="">
+                    <p class="passage__content_l">{{content}}</p>
+                    <img class="passage__content_r wow flip-in-ver-left" data-wow-duration="1.2s" src="{{picture2Image}}" alt="">
                 </div>
-                <img  class="wow slideInUp" data-wow-duration="1.2s" src="images/cases_detail3.jpg" alt="">
+                <img  class="wow slideInUp" data-wow-duration="1.2s" src="{{picture3Image}}" alt="">
             </div>
         </script>
     </div>
@@ -84,22 +84,22 @@
             </ul>
         </script>
     </footer>
-    <script src="js/wow.min.js"></script>
     <script src="js/artTemplate.js"></script>
+    <script src="js/wow.min.js"></script>
     <script src="js/common.js"></script>
     <script>
-
         var detailId = window.location.search.substring(1)
         $.get('http://back.n2o.gzbige.com/n2oPublic/queryCase.do?id='+detailId,function(res){
-            console.log(res)
+            console.log(res.model)
             //render
-            var data = res
+            var data = res.model
             var html = template('main_content',data);  
             document.getElementById("main").innerHTML = html; 
+            if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+                new WOW().init();
+            };  
         })
-        if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
-            new WOW().init();
-        };  
+        
     </script>
 </body>
 </html>
