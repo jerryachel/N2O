@@ -111,7 +111,8 @@
             var swiper = new Swiper('.swiper-container', {
                 autoplay:2000,
                 pagination: '.swiper-pagination',
-                slidesPerView: 5,
+                slidesPerView: data.contents.length,
+                direction: 'horizontal',
                 loop:true,
                 centeredSlides: true,
                 paginationClickable: true,
@@ -120,7 +121,9 @@
                 nextButton:'.swiper-button-next',
                 slideToClickedSlide:true,
                 effect:"coverflow",
-                loopAdditionalSlides:1
+                loopAdditionalSlides:1,
+                observer:true,
+                observeParents:true,
             });
             
                 
