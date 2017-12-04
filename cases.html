@@ -10,9 +10,11 @@
     <title>安图欧团建顾问</title>
     <link rel="stylesheet" type="text/css" href="css/public.css">
     <link rel="stylesheet" href="css/swiper.min.css">
+    <!-- <link rel="stylesheet" href="css/jquery.fullPage.css"> -->
     <link rel="stylesheet" href="css/index.css">
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/swiper.min.js"></script>
+    <!-- <script src="js/jquery.fullPage.min.js"></script> -->
     <noscript>您的浏览器不支持JavaScript，请启动JavaScript或更换浏览器</noscript>
 </head>
 <body class="cases_body">
@@ -51,7 +53,41 @@
             </div>
         </nav>
     </header>
-    <div class="main cases_main" id="main">
+    <div class="main" id="main" style="height:calc(100% - 275px)">
+        <script id="main_content" type="text/html">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    {{each contents item i }}
+                    <div class="swiper-slide" style="background:url('{{item.resourceUrl}}')no-repeat center center;background-size: cover;">
+                        <div class="cases_content">
+                            <h1>{{item.firstTitle}}</h1>
+                            <p>{{item.secondTitle}}</p>
+                            <a href="cases_detail.html?{{item.id}}">了解更多>></a>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            <div class="cases_left">
+                <div class="cases_nav">
+                    <span class="curNum">01</span>&nbsp;/&nbsp;<span class="totalNum"></span>
+                    <i>></i>
+                </div>
+                <div class="white_line"></div>
+                <div class="pagination">
+                    <ul>
+                        {{each contents item i }}
+                        <li class="pagination_preview" style="background: url('{{item.resourceUrl}}')no-repeat center center;background-size: cover;">
+                            <div class="mask"></div>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </script>
+    </div>
+    
+    <!-- <div class="main cases_main" id="main">
         <script id="main_content" type="text/html">
             <div class="cases__container">
                 <section class="pc-banner">
@@ -80,8 +116,9 @@
                 </section>
             </div>
         </script>
-    </div>
-    <footer id="footer_info" class="footer">
+    </div> -->
+
+    <footer id="footer_info" class="case_footer footer">
         <script id="companyInfo" type="text/html">  
             <ul class="footer__container">
                 <li class="footer__items"><a href="years.html">年度系列</a></li>
@@ -102,6 +139,56 @@
     <script src="js/artTemplate.js"></script>
     <script src="js/common.js"></script>
     <script>
+        
+        $.get('http://back.n2o.gzbige.com/n2oPublic/query.do?menuId=3',function(res){
+            console.log(res)
+            //render
+            var data = res.model
+            var html = template('main_content',data);  
+            document.getElementById("main").innerHTML = html; 
+            $('.cases_left').hover(function() {
+                $('.cases_content').addClass('cases_content_move')
+            }, function() {
+                $('.cases_content').removeClass('cases_content_move')
+            });
+            var swiper = new Swiper('.swiper-container', {
+                mousewheelControl : true,
+                effect:"slide",
+                direction: 'vertical',
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    
+                },
+                onInit:function(swiper){
+                    if (data.contents.length<10) {
+                        $(".totalNum").text('0'+data.contents.length)
+                    }else{
+                        $(".totalNum").text(data.contents.length)
+                    }
+                    
+                },
+                onSlideChangeStart: function(swiper){
+                    if (swiper.activeIndex < 10) {
+                        $(".curNum").text('0'+(parseInt(swiper.activeIndex)+1))
+                    }else{
+                        $(".curNum").text(parseInt(swiper.activeIndex)+1)
+                    }
+                    
+                }
+            });
+            $(".pagination_preview").on('click', function(event) {
+                event.preventDefault();
+                var index = $(".pagination_preview").index($(this))
+                swiper.slideTo(index)
+                
+            });    
+                
+        })
+
+        
+    </script>
+    <!-- <script>
         $.get('http://back.n2o.gzbige.com/n2oPublic/query.do?menuId=3',function(res){
             console.log(res)
             //render
@@ -131,6 +218,6 @@
         if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
             new WOW().init();
         };  
-    </script>
+    </script> -->
 </body>
 </html>

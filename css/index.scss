@@ -589,6 +589,29 @@ html,body,#app{
     position: relative;
 }
 .swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+/* .swiper-container {
     width: 100%;
     margin: 35px 0;
     padding: 50px 0;
@@ -596,7 +619,7 @@ html,body,#app{
 }
 
 .swiper-slide {
-    box-shadow: 0 0 10px 0 #000;
+    //box-shadow: 0 0 10px 0 #000;
     display: flex;
     flex-direction:column ;
     justify-content:space-between;
@@ -629,23 +652,6 @@ html,body,#app{
     margin-bottom: 30px;
 }
 
-.swiper-pagination-bullet {
-    background: #00a0e9;
-    margin-left: 4px;
-    margin-right: 4px;
-    width: 17px;
-    height: 17px;
-    opacity: 1;
-    margin-bottom: 4px;
-}
-
-.swiper-pagination-bullet-active {
-    width: 13px;
-    height: 13px;
-    background: #FFF;
-    border: 6px solid #00a0e9;
-    margin-bottom: 0;
-}
 
 .swiper-button-prev {
     position: absolute;
@@ -663,7 +669,7 @@ html,body,#app{
     width: 37px;
     height: 66px;
     background: url("../images/arrow_r.png") center 50%/50% 50% no-repeat;
-}
+} */
 .mask__white{
     background: rgba(255,255,255,.4);
     position: absolute;
@@ -727,10 +733,124 @@ html,body,#app{
     height: 100%;
     overflow: hidden;
 }
-
-
-
-
+.case_footer{
+    height: 200px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+    .footer__container{
+        padding-top: 20px;
+    }
+}
+.cases_left{
+    position: fixed;
+    top: 75px;
+    left: 0;
+    height:calc(100% - 275px);
+    width: 185px;
+    z-index: 99;
+    overflow: hidden;
+    transition:width ease .3s;
+    &:hover{
+        width: 550px;
+    }
+    .cases_nav{
+        position: absolute;
+        top: 40.9%;
+        left: 0;
+        width: 184px;
+        height: 35px;
+        background-color: rgba(0,0,0,.6);
+        color: #fff;
+        text-align: center;
+        font-size: 18px;
+        line-height: 32px;
+        i{
+            font-style: normal;
+            position: absolute;
+            right: 18.9%;
+            top: 0;
+            display: block;
+            height: 100%;
+            line-height: 30px;
+        }
+    }
+    .white_line{
+        position: absolute;
+        top: 0;
+        left:184px;
+        width: 1px;
+        height: 100%;
+        background-color: rgba(255,255,255,.7)
+    }
+    .pagination{
+        width: 365px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 185px;
+        background-color: #fff;
+        cursor: pointer;
+        ul{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    .pagination_preview{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        .mask{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color:rgba(0,0,0,.4); 
+            transition:opacity ease .3s;
+            opacity: 1;
+            &:hover{
+                opacity: 0;
+            }
+        }
+    }
+}
+.cases_content{
+    width: 408px;
+    height: 227px;
+    background-color: rgba(0,0,0,.6);
+    position: absolute;
+    top: 40.9%;
+    left: 185px;
+    transition:all ease .3s;
+    display: flex;
+    align-items:flex-start;
+    color: #fff;
+    flex-direction:column;
+    padding: 20px 0 20px 65px;
+    h1{
+        font-size: 48px;
+    }
+    p{
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+    }
+    a{
+        font-size: 18px;
+        color: #fff;
+        display: block;
+        background-color: #e5432e;
+        text-align: center;
+        width: 160px;
+        height: 50px;
+        line-height: 48px;
+    }
+}
+.cases_content_move{
+    transform:translate3d(365px,0,0)
+}
 
 
 
