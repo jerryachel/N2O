@@ -64,6 +64,9 @@
                             <p>{{item.secondTitle}}</p>
                             <a href="cases_detail.html?{{item.id}}">了解更多>></a>
                         </div>
+                        {{if i == 0}}
+                        <img class="arrow_down" src="images/arrow_down.png" alt="">
+                        {{/if}}
                     </div>
                     {{/each}}
                 </div>

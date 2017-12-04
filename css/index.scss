@@ -851,6 +851,13 @@ html,body,#app{
 .cases_content_move{
     transform:translate3d(365px,0,0)
 }
+.arrow_down{
+    position: absolute;
+    left: calc( 50% - 32.5px );
+    bottom: 23px;
+    width: 65px;
+    animation:upDown 1.5s 0s both infinite;
+}
 
 
 
@@ -866,8 +873,15 @@ html,body,#app{
 
 
 
-
-
+@-webkit-keyframes upDown {
+    0%,
+    100% {
+        -webkit-transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(-50%);
+    }
+}
 
 @-webkit-keyframes slideInDown {
   0% {

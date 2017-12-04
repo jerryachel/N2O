@@ -834,6 +834,20 @@ html, body, #app {
   -webkit-transform: translate3d(365px, 0, 0);
           transform: translate3d(365px, 0, 0); }
 
+.arrow_down {
+  position: absolute;
+  left: calc( 50% - 32.5px );
+  bottom: 23px;
+  width: 65px;
+  -webkit-animation: upDown 1.5s 0s both infinite;
+          animation: upDown 1.5s 0s both infinite; }
+
+@-webkit-keyframes upDown {
+  0%,
+    100% {
+    -webkit-transform: translateY(0); }
+  50% {
+    -webkit-transform: translateY(-50%); } }
 @-webkit-keyframes slideInDown {
   0% {
     opacity: 0;
