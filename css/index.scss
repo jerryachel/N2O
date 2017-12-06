@@ -611,65 +611,7 @@ html,body,#app{
   -webkit-align-items: center;
   align-items: center;
 }
-/* .swiper-container {
-    width: 100%;
-    margin: 35px 0;
-    padding: 50px 0;
 
-}
-
-.swiper-slide {
-    //box-shadow: 0 0 10px 0 #000;
-    display: flex;
-    flex-direction:column ;
-    justify-content:space-between;
-    position: relative;
-}
-
-.swiper-slide-active,.swiper-slide-duplicate-active {
-    z-index: 999;
-    .mask__white{
-        display: none;
-    }
-}
-
-.none-effect {
-    -webkit-transition: none;
-    -moz-transition: none;
-    -ms-transition: none;
-    -o-transition: none;
-}
-
-.swiper-slide-active a:after {
-    background: none;
-}
-.swiper-slide img {
-    width: 100%;
-    display: block;
-}
-.swiper-pagination {
-    position: relative;
-    margin-bottom: 30px;
-}
-
-
-.swiper-button-prev {
-    position: absolute;
-    top: 45%;
-    left: -50px;
-    width: 37px;
-    height: 66px;
-    background: url("../images/arrow_l.png") center 50%/50% 50% no-repeat;
-}
-
-.swiper-button-next {
-    position: absolute;
-    top: 45%;
-    right: -50px;
-    width: 37px;
-    height: 66px;
-    background: url("../images/arrow_r.png") center 50%/50% 50% no-repeat;
-} */
 .mask__white{
     background: rgba(255,255,255,.4);
     position: absolute;
