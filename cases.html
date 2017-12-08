@@ -100,7 +100,7 @@
                 <li class="footer__items"><a href="courses.html">特色课程</a></li>
                 <li class="footer__items"><img class="qrcode_img" src="images/qrcode.jpg" alt=""></li>
                 <li class="footer__items">{{telePhone}}</li>
-                <p class="copyright">Copyright @ 2017 N2O-X版权所有</p>
+                <p class="copyright">Copyright @ 2017 N2O-X版权所有&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;备案号：粤ICP备17147835号</p>
             </ul>
         </script>
     </footer>
@@ -109,7 +109,7 @@
     <script src="js/common.js"></script>
     <script>
         
-        $.get('http://back.n2o.gzbige.com/n2oPublic/query.do?menuId=3',function(res){
+        $.get(baseUrl+'/n2oPublic/query.do?menuId=3',function(res){
             console.log(res)
             //render
             var data = res.model
