@@ -9,118 +9,126 @@
     <meta name="keywords" content="安图欧、团建顾问" />
     <title>安图欧团建顾问</title>
     <link rel="stylesheet" type="text/css" href="css/public.css">
-    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/video-js.min.css">
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
+    <link rel="stylesheet" href="css/index.css">
     <script src="js/jquery-1.11.3.min.js"></script>
     <noscript>您的浏览器不支持JavaScript，请启动JavaScript或更换浏览器</noscript>
 </head>
 <body>            
-	<header class="header">
-        <nav class="nav">
-            <a href="index.html"><img src="images/logo.png" class="nav__logo" alt=""></a>
-            <div class="nav__menu">
-                <ul>
-                    <li class="menu__item menu__item_actived">
-                        <a href="index.html">首页</a>
-                        <span class="menu__underline"></span>
-                    </li>
-                    <li class="menu__item">
-                        <a href="years.html">年度系列</a>
-                        <span class="menu__underline"></span>
-                    </li>
-                    <li class="menu__item">
-                        <a href="think.html">N20-X的思考</a>
-                        <span class="menu__underline"></span>
-                    </li> 
-                    <li class="menu__item">
-                        <a href="cases.html">精彩案例</a>
-                        <span class="menu__underline"></span>
-                    </li>
-                    <li class="menu__item">
-                        <a href="courses.html">特色课程</a>
-                        <span class="menu__underline"></span>
-                    </li>
-                    <li class="menu__item">
-                        <a href="contact.html">联系我们</a>
-                        <span class="menu__underline"></span>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+
     <div class="main" id="main">
-        <script id="main_content" type="text/html">  
-            {{if banners != ''}}
-            {{if banners[0].bannerType == 1}}
-            <div class="video__container">
-                <video id="video" class="video-js vjs-default-skin"  preload="none" width="100%" height="100%" loop="true" data-setup="{}">
-                    <source src="{{banners[0].resourceUrl}}" type="video/mp4">
-                    <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-                </video>
-            </div>
-            {{else banners[0].bannerType == 0}}
-            <div class="fullSlide">
-                <ul>
-                    {{each banners pic i}}
-                    <li style="background:url('{{pic.resourceUrl}}') center center no-repeat;"></li>
-                    {{/each}}
-                </ul>
-                <a class="prev" href="javascript:void(0)"></a>
-                <a class="next" href="javascript:void(0)"></a>
-            </div> 
-            {{/if}}
-            {{/if }}
-            {{ each contents item i}}
-                <div class="banner{{i+2}}" style="background:url('{{item.resourceUrl}}')no-repeat center center;background-size: cover;">
-                    {{if i==0}}
-                        <div class="banner__bg wow bounceInLeft" data-wow-duration="1.2s" data-wow-offset="150">
-                            <div class="banner__text">
-                                <h2 class="banner__title1 wow bounceInLeft" data-wow-duration="1s">{{item.firstTitle}}</h2>
-                                <h3 class="banner__title2 wow bounceInLeft" data-wow-duration="1.2s">{{item.secondTitle}}</h3>
-                                <a href="{{item.clickUrl}}" class="banner_link wow bounceInLeft" data-wow-duration="1.5s">了解更多 <span>>></span></a>
+        <script id="main_content" type="text/html">
+            <div id="dowebok">
+                <div class="section">
+                    <header class="header">
+                        <nav class="nav">
+                            <a href="index.html"><img src="images/logo.png" class="nav__logo" alt=""></a>
+                            <div class="nav__menu">
+                                <ul>
+                                    <li class="menu__item menu__item_actived">
+                                        <a href="index.html">首页</a>
+                                        <span class="menu__underline"></span>
+                                    </li>
+                                    <li class="menu__item">
+                                        <a href="years.html">年度系列</a>
+                                        <span class="menu__underline"></span>
+                                    </li>
+                                    <li class="menu__item">
+                                        <a href="think.html">N20-X的思考</a>
+                                        <span class="menu__underline"></span>
+                                    </li> 
+                                    <li class="menu__item">
+                                        <a href="cases.html">精彩案例</a>
+                                        <span class="menu__underline"></span>
+                                    </li>
+                                    <li class="menu__item">
+                                        <a href="courses.html">特色课程</a>
+                                        <span class="menu__underline"></span>
+                                    </li>
+                                    <li class="menu__item">
+                                        <a href="contact.html">联系我们</a>
+                                        <span class="menu__underline"></span>
+                                    </li>
+                                </ul>
                             </div>
-                        </div>
-                        <img src="images/banner2_n.png" class="banner2__n" alt="">
-                    {{else if i==1}}
-                        <div class="banner__bg wow bounceInRight" data-wow-duration="1.2s" >
-                            <div class="banner__text">
-                                <h2 class="banner__title1 wow bounceInRight" data-wow-duration="1s">{{item.firstTitle}}</h2>
-                                <h3 class="banner__title2 wow bounceInRight" data-wow-duration="1.2s">{{item.secondTitle}}</h3>
-                                <a href="{{item.clickUrl}}" class="banner_link  wow bounceInRight" data-wow-duration="1.4s">了解更多 <span>>></span></a>
-                            </div>
-                        </div>
-                    {{else if i==2}}
-                    <div class="banner4" style="background:url('./images/banner4.jpg')no-repeat center center;background-size: cover;">
-                        <div class="banner__bg wow bounceInLeft" data-wow-duration="1.2s" >
-                            <div class="banner__text">
-                                <h2 class="banner__title1 wow bounceInLeft" data-wow-duration="1s">{{item.firstTitle}}</h2>
-                                <h3 class="banner__title2 wow bounceInLeft" data-wow-duration="1.2s">{{item.secondTitle}}</h3>
-                                <a href="{{item.clickUrl}}" class="banner_link wow bounceInLeft" data-wow-duration="1.5s">了解更多 <span>>></span></a>
-                            </div>
-                        </div>
+                        </nav>
+                    </header>
+                    {{if banners != ''}}
+                    {{if banners[0].bannerType == 1}}
+                    <div class="video__container">
+                        <video id="video" class="video-js vjs-default-skin"  preload="none" width="100%" height="100%" loop="true" data-setup="{}">
+                            <source src="{{banners[0].resourceUrl}}" type="video/mp4">
+                            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+                        </video>
                     </div>
+                    {{else banners[0].bannerType == 0}}
+                    <div class="fullSlide">
+                        <ul>
+                            {{each banners pic i}}
+                            <li style="background:url('{{pic.resourceUrl}}') center center no-repeat;background-size: cover"></li>
+                            {{/each}}
+                        </ul>
+                        <a class="prev" href="javascript:void(0)"></a>
+                        <a class="next" href="javascript:void(0)"></a>
+                    </div> 
+                    {{/if}}
+                    {{/if }}
+                </div>
+                {{ each contents item i}}
+                <div class="section">
+                    <div class="banner{{i+2}}" style="background:url('{{item.resourceUrl}}')no-repeat center center;background-size: cover;">
+                        {{if i==0}}
+                            <div class="banner__bg">
+                                <div class="banner__text">
+                                    <h2 class="banner__title1 bounceInLeft">{{item.firstTitle}}</h2>
+                                    <h3 class="banner__title2">{{item.secondTitle}}</h3>
+                                    <a href="{{item.clickUrl}}" class="banner_link">了解更多 <span>>></span></a>
+                                </div>
+                            </div>
+                            <img src="images/banner2_n.png" class="banner2__n" alt="">
+                        {{else if i==1}}
+                            <div class="banner__bg" >
+                                <div class="banner__text">
+                                    <h2 class="banner__title1">{{item.firstTitle}}</h2>
+                                    <h3 class="banner__title2">{{item.secondTitle}}</h3>
+                                    <a href="{{item.clickUrl}}" class="banner_link">了解更多 <span>>></span></a>
+                                </div>
+                            </div>
+                        {{else if i==2}}
+                        <div class="banner__bg">
+                            <div class="banner__text">
+                                <h2 class="banner__title1">{{item.firstTitle}}</h2>
+                                <h3 class="banner__title2">{{item.secondTitle}}</h3>
+                                <a href="{{item.clickUrl}}" class="banner_link">了解更多 <span>>></span></a>
+                            </div>
+                        </div>
+                        {{/if}}
+                    </div>
+                    {{if i==2}}
+                    <footer id="footer_info" class="footer">
+                            <ul class="footer__container">
+                                <li class="footer__items"><a href="years.html">年度系列</a></li>
+                                <li class="footer__items"><a href="cases.html">精彩案例</a></li>
+                                <li class="footer__items"><a href="javascript:void(0)">官方微信</a></li>
+                                <li class="footer__items"><a href="#">联系热线</a></li>
+                                <li class="footer__items"><a href="think.html">N20-X的思考</a></li>
+                                <li class="footer__items"><a href="courses.html">特色课程</a></li>
+                                <li class="footer__items"><img class="qrcode_img" src="images/qrcode.jpg" alt=""></li>
+                                <li class="footer__items tel_phone">{{telePhone}}</li>
+                                <p class="copyright">Copyright @ 2017 N2O-X版权所有&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;备案号：粤ICP备17147835号</p>
+                            </ul>
+                    </footer>
                     {{/if}}
                 </div>
-            {{/each}}
+                {{/each}}
+            </div>
         </script>
     </div>
-    <footer id="footer_info" class="footer">
-        <script id="companyInfo" type="text/html">  
-            <ul class="footer__container">
-                <li class="footer__items"><a href="years.html">年度系列</a></li>
-                <li class="footer__items"><a href="cases.html">精彩案例</a></li>
-                <li class="footer__items"><a href="javascript:void(0)">官方微信</a></li>
-                <li class="footer__items"><a href="#">联系热线</a></li>
-                <li class="footer__items"><a href="think.html">N20-X的思考</a></li>
-                <li class="footer__items"><a href="courses.html">特色课程</a></li>
-                <li class="footer__items"><img class="qrcode_img" src="images/qrcode.jpg" alt=""></li>
-                <li class="footer__items">{{telePhone}}</li>
-                <p class="copyright">Copyright @ 2017 N2O-X版权所有&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;备案号：粤ICP备17147835号</p>
-            </ul>
-        </script>
-    </footer>
+
     <script src="js/artTemplate.js"></script>
     <script src="js/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="js/jquery.fullPage.min.js"></script>
     <script src="js/video.min.js"></script>
     <script src="js/wow.min.js"></script>
     <script src="js/common.js"></script>
@@ -131,16 +139,35 @@
             var html = template('main_content',data);  
             document.getElementById("main").innerHTML = html; 
             jQuery(".fullSlide").slide({ mainCell: "ul", effect: "fold", autoPlay: true, mouseOverStop: false });
-            if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+            /*if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
                 new WOW().init();
-            }; 
+            }; */
             if (data.banners[0].bannerType == 1) {
                 var player = videojs('video', { fluid: true }, function () {
                    console.log('Good to go!');
                    this.play(); // if you don't trust autoplay for some reason  
                 })
             }
-
+            $('#dowebok').fullpage({
+                scrollingSpeed:300,
+                css3:true,
+                navigation:true,
+                navigationColor:'#fff',
+                onLeave:function(index ,nextIndex ,direction ){
+                    //console.log(index ,nextIndex)
+                    //$("#dowebok .section").eq(nextIndex-1).show()
+                   
+                },
+                afterRender:function(){
+                    //$(".section .banner__bg").hide()
+                },
+                afterLoad:function(anchorLink  ,index){
+                    $(".section .banner__bg").hide()
+                    $(".section .banner__bg").eq(index-2).show()
+                    //console.log($(".section").eq(index-1))  
+                }
+            });
+            $("html,body").css('overflow-x', 'auto');
         })       
     </script>
 </body>
