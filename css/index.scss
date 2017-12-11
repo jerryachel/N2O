@@ -54,6 +54,12 @@ html,body,#app{
     height: 75px;
     background-color: #000;
 }
+.index_header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
 .nav{
     width:1200px;
     margin:0 auto;
@@ -119,12 +125,15 @@ html,body,#app{
     min-width: 1200px;
     overflow: auto;
 }
+#dowebok{
+    background-color: #000;
+}
 .fullSlide {
     /* position: absolute;
     left: 0;
     top: 0; */
     width: 100%;
-    height:calc(100% - 75px);
+    height:100%;
     background: #000;
     position: relative;
 }
@@ -250,6 +259,11 @@ html,body,#app{
         color: #999
     }
 }
+.index_footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
 .banner2{
     position: relative;
     overflow: hidden;
@@ -365,11 +379,12 @@ html,body,#app{
     }
 }
 .banner4{
-    position: relative;
     overflow: hidden;
     width: 100%;
-    height: calc(100% - 230px);
+    height: calc(100% - 305px);
     color: #000;
+    position: absolute;
+    top: 75px;
     .banner__bg{
         position: absolute;
         width: 43.4375%;

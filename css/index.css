@@ -15,6 +15,12 @@ html, body, #app {
   height: 75px;
   background-color: #000; }
 
+.index_header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999; }
+
 .nav {
   width: 1200px;
   margin: 0 auto;
@@ -45,7 +51,7 @@ html, body, #app {
     color: #666;
     font-size: 16px;
     -webkit-transition: all ease .5s;
-            transition: all ease .5s; }
+    transition: all ease .5s; }
   .nav__menu .menu__underline {
     opacity: 0;
     position: absolute;
@@ -56,7 +62,7 @@ html, body, #app {
     height: 3px;
     background-color: #e4442e;
     -webkit-transition: all ease .5s;
-            transition: all ease .5s; }
+    transition: all ease .5s; }
   .nav__menu .menu__item:hover a, .nav__menu .menu__item_actived a {
     color: #fff; }
   .nav__menu .menu__item:hover .menu__underline, .nav__menu .menu__item_actived .menu__underline {
@@ -71,12 +77,15 @@ html, body, #app {
   min-width: 1200px;
   overflow: auto; }
 
+#dowebok {
+  background-color: #000; }
+
 .fullSlide {
   /* position: absolute;
   left: 0;
   top: 0; */
   width: 100%;
-  height: calc(100% - 75px);
+  height: 100%;
   background: #000;
   position: relative; }
 
@@ -101,7 +110,6 @@ html, body, #app {
   opacity: 0.6;
   left: 10.8%;
   -webkit-transform: translate(0, -50%);
-      -ms-transform: translate(0, -50%);
           transform: translate(0, -50%);
   border: none; }
 
@@ -118,7 +126,6 @@ html, body, #app {
   opacity: 0.6;
   left: 10.8%;
   -webkit-transform: translate(0, -50%);
-      -ms-transform: translate(0, -50%);
           transform: translate(0, -50%); }
 
 .next {
@@ -135,7 +142,6 @@ html, body, #app {
   left: auto;
   right: 10.8%;
   -webkit-transform: translate(0, -50%);
-      -ms-transform: translate(0, -50%);
           transform: translate(0, -50%); }
 
 .fullSlide .prev:hover,
@@ -180,21 +186,18 @@ html, body, #app {
     height: 100%;
     color: #666;
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     -webkit-box-align: start;
-    -webkit-align-items: flex-start;
         -ms-flex-align: start;
             align-items: flex-start;
     padding-top: 45px; }
     .footer .footer__container a {
       color: #666;
       -webkit-transition: all .5s ease;
-              transition: all .5s ease; }
+      transition: all .5s ease; }
     .footer .footer__container a:hover {
       color: #fff; }
     .footer .footer__container .footer__items {
@@ -203,6 +206,11 @@ html, body, #app {
     width: 80px; }
   .footer .copyright {
     color: #999; }
+
+.index_footer {
+  position: absolute;
+  bottom: 0;
+  left: 0; }
 
 .banner2 {
   position: relative;
@@ -225,7 +233,6 @@ html, body, #app {
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%); }
   .banner2 .banner__title1 {
     font-weight: lighter;
@@ -253,10 +260,9 @@ html, body, #app {
     .banner2 .banner_link span {
       display: inline-block;
       -webkit-transition: all ease .5s;
-              transition: all ease .5s; }
+      transition: all ease .5s; }
     .banner2 .banner_link:hover span {
       -webkit-transform: translate(10px, 0);
-          -ms-transform: translate(10px, 0);
               transform: translate(10px, 0); }
   .banner2 .banner2__n {
     width: 14.375%;
@@ -265,7 +271,6 @@ html, body, #app {
     left: 50%;
     z-index: 2;
     -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%); }
 
 .banner3 {
@@ -288,7 +293,6 @@ html, body, #app {
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%); }
   .banner3 .banner__title1 {
     font-weight: lighter;
@@ -316,18 +320,18 @@ html, body, #app {
     .banner3 .banner_link span {
       display: inline-block;
       -webkit-transition: all ease .5s;
-              transition: all ease .5s; }
+      transition: all ease .5s; }
     .banner3 .banner_link:hover span {
       -webkit-transform: translate(10px, 0);
-          -ms-transform: translate(10px, 0);
               transform: translate(10px, 0); }
 
 .banner4 {
-  position: relative;
   overflow: hidden;
   width: 100%;
-  height: calc(100% - 230px);
-  color: #000; }
+  height: calc(100% - 305px);
+  color: #000;
+  position: absolute;
+  top: 75px; }
   .banner4 .banner__bg {
     position: absolute;
     width: 43.4375%;
@@ -343,7 +347,6 @@ html, body, #app {
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     text-align: right; }
   .banner4 .banner__title1 {
@@ -372,10 +375,9 @@ html, body, #app {
     .banner4 .banner_link span {
       display: inline-block;
       -webkit-transition: all ease .5s;
-              transition: all ease .5s; }
+      transition: all ease .5s; }
     .banner4 .banner_link:hover span {
       -webkit-transform: translate(10px, 0);
-          -ms-transform: translate(10px, 0);
               transform: translate(10px, 0); }
   .banner4 .banner2__n {
     width: 14.375%;
@@ -384,7 +386,6 @@ html, body, #app {
     left: 50%;
     z-index: 2;
     -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%); }
 
 /* index END */
@@ -392,7 +393,6 @@ html, body, #app {
   width: 100%;
   height: 890px;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex; }
   .accordion .accordion__content {
@@ -400,13 +400,13 @@ html, body, #app {
     height: 100%;
     position: relative;
     -webkit-transition: all ease .5s;
-            transition: all ease .5s;
+    transition: all ease .5s;
     overflow: hidden;
     -webkit-box-flex: 1;
-    -webkit-flex: 1;
         -ms-flex: 1;
             flex: 1;
-    box-shadow: 0 0 20px 0 #000;
+    -webkit-box-shadow: 0 0 20px 0 #000;
+            box-shadow: 0 0 20px 0 #000;
     background: #f5f5f5; }
     .accordion .accordion__content:hover .accordion__mask {
       background: rgba(0, 0, 0, 0.4); }
@@ -414,7 +414,6 @@ html, body, #app {
       opacity: 1; }
   .accordion .accordion__content-active {
     -webkit-box-flex: 6.67;
-    -webkit-flex: 6.67;
         -ms-flex: 6.67;
             flex: 6.67; }
     .accordion .accordion__content-active .accordion__text {
@@ -425,7 +424,7 @@ html, body, #app {
     height: 100%;
     position: relative;
     -webkit-transition: all ease .5s;
-            transition: all ease .5s;
+    transition: all ease .5s;
     float: left; }
   .accordion .accordion__mask {
     position: absolute;
@@ -434,13 +433,13 @@ html, body, #app {
     width: 100%;
     height: 100%;
     -webkit-transition: all ease .5s;
-            transition: all ease .5s;
+    transition: all ease .5s;
     background: transparent; }
   .accordion .accordion__icon {
     width: 62px;
     margin: 40px auto;
     -webkit-transition: all ease .5s;
-            transition: all ease .5s;
+    transition: all ease .5s;
     opacity: 0; }
 
 .accordion__title {
@@ -489,7 +488,6 @@ html, body, #app {
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%); }
   .accordion__content-courses .accordion__title p {
     font-size: 36px;
@@ -500,7 +498,7 @@ html, body, #app {
   width: 100%;
   height: 100%; }
 
-/* 鑱旂郴鎴戜滑 */
+/* 联系我们 */
 .contact__banner img {
   width: 100%; }
 
@@ -513,11 +511,9 @@ html, body, #app {
     font-size: 30px; }
   .contact_text .contact_way {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-    -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center; }
     .contact_text .contact_way span {
@@ -526,11 +522,9 @@ html, body, #app {
       height: 24px; }
   .contact_text .contact_icon {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     margin: 30px 80px 30px 0; }
@@ -540,18 +534,16 @@ html, body, #app {
   .contact_map img {
     width: 100%; }
 
-/* 绮惧僵妗堜緥 */
+/* 精彩案例 */
 .cases__container {
   width: 100%;
   height: 782px;
   background: url("../images/cases_bg.jpg") no-repeat center center;
   background-size: cover;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center; }
 
@@ -562,16 +554,13 @@ html, body, #app {
   color: #fff;
   background: #e5432e;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
   -webkit-box-pack: center;
-  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center; }
   .swiper__title p {
@@ -585,7 +574,6 @@ html, body, #app {
   top: 60%;
   left: 50%;
   -webkit-transform: translate(-50%, 0);
-      -ms-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
   display: block;
   text-align: center;
@@ -616,15 +604,12 @@ html, body, #app {
   /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
-  display: -webkit-flex;
   display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  -webkit-justify-content: center;
   justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  -webkit-align-items: center;
   align-items: center; }
 
 .mask__white {
@@ -638,7 +623,6 @@ html, body, #app {
 
 .cases__banner {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex; }
 
@@ -648,16 +632,13 @@ html, body, #app {
   background: #e5432e;
   color: #fff;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
   -webkit-box-pack: center;
-  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center; }
@@ -678,7 +659,6 @@ html, body, #app {
   .cases__passage .passage__content {
     width: 100%;
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     margin-bottom: 20px; }
@@ -699,11 +679,11 @@ html, body, #app {
 
 .cases_body {
   width: 100%;
-  height: 100%
+  height: 100%;
   /* overflow: hidden; */ }
 
 .case_footer {
-  height: 200px
+  height: 200px;
   /* position: fixed;
   bottom: 0;
   left: 0;
@@ -723,7 +703,7 @@ html, body, #app {
   z-index: 99;
   overflow: hidden;
   -webkit-transition: width ease .3s;
-          transition: width ease .3s; }
+  transition: width ease .3s; }
   .cases_left:hover {
     width: 550px; }
   .cases_left .cases_nav {
@@ -763,12 +743,10 @@ html, body, #app {
     .cases_left .pagination ul {
       height: 100%;
       display: -webkit-box;
-      display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
-      -webkit-flex-direction: column;
           -ms-flex-direction: column;
               flex-direction: column; }
   .cases_left .pagination_preview {
@@ -783,7 +761,7 @@ html, body, #app {
       height: 100%;
       background-color: rgba(0, 0, 0, 0.4);
       -webkit-transition: opacity ease .3s;
-              transition: opacity ease .3s;
+      transition: opacity ease .3s;
       opacity: 1; }
       .cases_left .pagination_preview .mask:hover {
         opacity: 0; }
@@ -796,19 +774,16 @@ html, body, #app {
   top: 40.9%;
   left: 185px;
   -webkit-transition: all ease .3s;
-          transition: all ease .3s;
+  transition: all ease .3s;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: start;
-  -webkit-align-items: flex-start;
       -ms-flex-align: start;
           align-items: flex-start;
   color: #fff;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 20px 0 20px 65px; }
