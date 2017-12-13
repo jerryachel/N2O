@@ -30,17 +30,18 @@
                         <span class="menu__underline"></span>
                     </li>
                     <li class="menu__item">
-                        <a href="think.html">N20-X的思考</a>
+                        <a href="courses.html">特色课程</a>
                         <span class="menu__underline"></span>
-                    </li> 
+                    </li>
                     <li class="menu__item">
                         <a href="cases.html">精彩案例</a>
                         <span class="menu__underline"></span>
                     </li>
                     <li class="menu__item">
-                        <a href="courses.html">特色课程</a>
+                        <a href="think.html">N20-X的思考</a>
                         <span class="menu__underline"></span>
-                    </li>
+                    </li> 
+                    
                     <li class="menu__item">
                         <a href="contact.html">联系我们</a>
                         <span class="menu__underline"></span>
@@ -107,15 +108,15 @@
                     {{if i==2}}
                     <footer id="footer_info" class="footer index_footer">
                             <ul class="footer__container">
+                                <li class="footer__items"><a href="javascript:void(0)">官方微信</a></li>
                                 <li class="footer__items"><a href="years.html">年度系列</a></li>
                                 <li class="footer__items"><a href="cases.html">精彩案例</a></li>
-                                <li class="footer__items"><a href="javascript:void(0)">官方微信</a></li>
-                                <li class="footer__items"><a href="#">联系热线</a></li>
                                 <li class="footer__items"><a href="think.html">N20-X的思考</a></li>
                                 <li class="footer__items"><a href="courses.html">特色课程</a></li>
+                                <li class="footer__items"><a href="#">联系热线</a></li>
                                 <li class="footer__items"><img class="qrcode_img" src="images/qrcode.jpg" alt=""></li>
-                                <li class="footer__items tel_phone">{{telePhone}}</li>
                                 <p class="copyright">Copyright @ 2017 N2O-X版权所有&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;备案号：粤ICP备17147835号</p>
+                                <li class="footer__items tel_phone"></li>
                             </ul>
                     </footer>
                     {{/if}}
@@ -138,7 +139,7 @@
             var html = template('main_content',data);  
             document.getElementById("main").innerHTML = html; 
             jQuery(".fullSlide").slide({ mainCell: "ul", effect: "fold", autoPlay: true, mouseOverStop: false });
-
+            $(".tel_phone").text(tel_phone)
             if (data.banners[0].bannerType == 1) {
                 var player = videojs('video', { fluid: true }, function () {
                    console.log('Good to go!');

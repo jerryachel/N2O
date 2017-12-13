@@ -229,7 +229,7 @@ html,body,#app{
 .footer{
     width: 100%;
     min-width: 1200px;
-    height: 230px;
+    height: 170px;
     font-size: 14px;
     background-color: #000;
     .footer__container{
@@ -240,7 +240,7 @@ html,body,#app{
         display: flex;
         flex-wrap:wrap;
         align-items:flex-start;
-        padding-top: 45px;
+        padding-top: 20px;
         a{
             color: #666;
             transition: all .5s ease;
@@ -249,14 +249,17 @@ html,body,#app{
             color: #fff;
         }
         .footer__items{
-            width: 25%;
+            width: 16.66%;
         }
     }
     .qrcode_img{
         width: 80px;
     }
     .copyright{
-        color: #999
+        color: #999;
+        margin-top: 60px;
+        text-align: center;
+        width: 66.5%;
     }
 }
 .index_footer{
@@ -381,7 +384,7 @@ html,body,#app{
 .banner4{
     overflow: hidden;
     width: 100%;
-    height: calc(100% - 295px);
+    height: calc(100% - 235px);
     color: #000;
     position: absolute;
     top: 65px;
@@ -859,7 +862,22 @@ html,body,#app{
     width: 65px;
     animation:upDown 1.5s 0s both infinite;
 }
-
+#fp-nav ul li, .fp-slidesNav ul li{
+    margin: 10px;
+}
+#fp-nav ul li a span, .fp-slidesNav ul li a span{
+    background: #fff;
+    width: 8px;
+    height: 8px;
+    margin: -4px 0 0 -4px;
+    box-shadow: 0 0  5px 1px rgba(255,255,255, .9)
+}
+#fp-nav ul li a.active span, .fp-slidesNav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li:hover a.active span{
+    height: 18px;
+    width: 18px;
+    margin: -9px 0 0 -9px;
+    border-radius: 100%;
+}
 
 
 
