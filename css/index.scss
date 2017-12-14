@@ -76,10 +76,11 @@ html,body,#app{
     display: inline-block;
     height:65px;
     float: right;
-    line-height: 65px;
+    line-height: 55px;
     .menu__item{
         display: inline-block;
         min-width:83px;
+        height: 65px;
         margin: 0 25px;
         position: relative;
         text-align: center;
@@ -91,23 +92,30 @@ html,body,#app{
         color: #666;
         font-size: 16px;
         transition: all ease .5s;
+        font-weight: normal;
     }
     .menu__underline{
-        opacity: 0;
+        line-height: 1;
+        min-width: 100%;
         position: absolute;
-        bottom: 12px;
-        left: 0;
-        display: inline-block;
-        width: 100%;
-        height: 3px;
-        background-color: #e4442e;
+        bottom:10px;
+        left: 50%;
+        transform:translate(-50%,0);
+        color: #e4442e;
+        font-size: 12px;
         transition: all ease .5s;
+        white-space:nowrap;
+        z-index: 1;
+        font-weight: normal;
+        opacity: 0;
     }
     .menu__item:hover,.menu__item_actived{
         a{
             color: #fff;
+            font-weight: bold;
         }
         .menu__underline{
+            font-weight: bold;
             opacity: 1;
         }
     }
@@ -117,6 +125,7 @@ html,body,#app{
     .menu__item:hover,.menu__item_actived{
         a{
             color: #111;
+            font-weight: bold;
         }
     }
 }
